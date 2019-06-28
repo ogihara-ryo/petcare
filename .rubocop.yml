@@ -1,0 +1,46 @@
+AllCops:
+  TargetRubyVersion: 2.6.3
+
+  Exclude:
+    - bin/**/*
+    - db/schema.rb
+    - vendor/**/*
+
+  DisplayCopNames: true
+
+Rails:
+  Enabled: true
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/BlockComments:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/AbcSize:
+  Exclude:
+    - 'db/migrate/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'Guardfile'
+    - 'config/environments/*rb'
+    - 'db/migrate/*'
+    - 'spec/**/*'
+
+Metrics/LineLength:
+  Max: 128
+
+Metrics/MethodLength:
+  Exclude:
+    - 'db/migrate/*'
+    
