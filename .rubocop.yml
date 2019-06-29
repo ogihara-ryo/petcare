@@ -43,4 +43,3 @@ Metrics/LineLength:
 Metrics/MethodLength:
   Exclude:
     - 'db/migrate/*'
-    
