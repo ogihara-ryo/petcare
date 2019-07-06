@@ -1,5 +1,5 @@
 class PetsController < ApplicationController
-  before_action :set_pet, only: [:show, :edit, :update, :destroy]
+  before_action :set_pet, only: %i[show edit update destroy]
 
   def index
     @pets = Pet.all.order(created_at: :desc)
@@ -48,13 +48,14 @@ class PetsController < ApplicationController
   end
 
   private
-    def set_pet
-      @pet = Pet.find(params[:id])
-    end
 
-    def pet_params
-      params.require(:pet).permit(
-        :user_id, :name, :race, :birthday, :greeted_on, :note, :thumbnail, :color
-      )
-    end
+  def set_pet
+    @pet = Pet.find(params[:id])
+  end
+
+  def pet_params
+    params.require(:pet).permit(
+      :user_id, :name, :race, :birthday, :greeted_on, :note, :thumbnail, :color
+    )
+  end
 end

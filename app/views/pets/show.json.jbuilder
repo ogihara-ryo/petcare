@@ -1,1 +1,1 @@
-json.partial! "pets/pet", pet: @pet
+json.partial! 'pets/pet', pet: @pet
