@@ -6,7 +6,7 @@ FactoryBot.define do
     birthday { '2000-05-05' }
     greeted_on { '2000-06-11' }
     note { 'MyText' }
-    # thumbnail {}
+    # TODO: thumbnail {}
     color { 'MyString' }
   end
 end
