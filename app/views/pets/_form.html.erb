@@ -1,0 +1,64 @@
+<%= form_with model: pet, local: true  do |f| %>
+  <% if pet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pet.errors.count, "error") %> prohibited this pet from being saved:</h2>
+
+      <ul>
+      <% pet.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%
+    # TODO: セッション未導入につき仮で選択式。
+    # = f.hidden_field :user_id, value: current_user.id
+  %>
+  <div>
+    <%= f.label :user_name %>
+    <%= f.collection_select :user_id, User.all, :id, :nickname, {}, required: true %>
+  </div>
+
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true %>
+  </div>
+
+  <div>
+    <%= f.label :race %>
+    <%= f.text_field :race %>
+  </div>
+
+  <div>
+    <%= f.label :birthday %>
+    <%= f.text_field :birthday, placeholder: '2000/01/01' %>
+  </div>
+
+  <div>
+    <%= f.label :greeted_on %>
+    <%= f.text_field :greeted_on, placeholder: '2000/01/01' %>
+  </div>
+
+  <div>
+    <%= f.label :note %>
+    <%= f.text_area :note %>
+  </div>
+
+  <div>
+    <%
+      # TODO: 画像用Gem未導入のため一旦、コメントアウト。
+      # = f.label :thumbnail
+      # = f.file_field :thumbnail
+    %>
+  </div>
+
+  <div>
+    <%= f.label :color %>
+    <%= f.text_field :color, placeholder: '#000000' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

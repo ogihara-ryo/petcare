@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @pet.name %>
+</p>
+
+<p>
+  <strong>Race:</strong>
+  <%= @pet.race %>
+</p>
+
+<p>
+  <strong>Birthday:</strong>
+  <%= @pet.birthday %>
+</p>
+
+<p>
+  <strong>Greeted On:</strong>
+  <%= @pet.greeted_on %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= simple_format(@pet.note) %>
+</p>
+
+<p>
+  <strong>Thumbnail:</strong>
+  <%=
+    # TODO: @pet.thumbnail
+  %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @pet.color %>
+</p>
+<%= link_to 'Edit', edit_pet_path(@pet) %> |
+<%= link_to 'Back', pets_path %>
