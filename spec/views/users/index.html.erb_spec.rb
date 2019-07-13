@@ -31,5 +31,3 @@ RSpec.describe "users/index", type: :view do
     assert_select "a[href=?]" , pets_path
   end
 end
-
-
