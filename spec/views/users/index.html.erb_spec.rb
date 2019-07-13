@@ -25,4 +25,9 @@ RSpec.describe "users/index", type: :view do
     assert_select "tr>td", :text => "Password Digest".to_s, :count => 2
     assert_select "tr>td", :text => "Uid".to_s, :count => 2
   end
+
+  it 'renders a link to pets' do
+    render
+    assert_select "a[href=?]" , pets_path
+  end
 end
