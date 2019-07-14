@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2019_07_06_140647) do
     t.integer "user_id"
     t.string "name"
     t.string "race"
+    t.boolean "sex"
     t.date "birthday"
     t.date "greeted_on"
     t.text "note"
