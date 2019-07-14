@@ -31,6 +31,14 @@
   </div>
 
   <div>
+    <%= f.label :sex %>
+    <%= f.radio_button :sex, true %>
+    <%= f.label :sex, 'オス', value: true %>
+    <%= f.radio_button :sex, false %>
+    <%= f.label :sex, 'メス', value: false %>
+  </div>
+
+  <div>
     <%= f.label :birthday %>
     <%= f.text_field :birthday, placeholder: '2000/01/01' %>
   </div>
