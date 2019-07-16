@@ -31,6 +31,11 @@
   </div>
 
   <div>
+    <%= f.label :sex %>
+    <%= f.select :sex, Pet.sexes.keys, selected: @pet.sex %>
+  </div>
+
+  <div>
     <%= f.label :birthday %>
     <%= f.text_field :birthday, placeholder: '2000/01/01' %>
   </div>
