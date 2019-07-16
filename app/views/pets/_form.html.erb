@@ -32,10 +32,7 @@
 
   <div>
     <%= f.label :sex %>
-    <%= f.radio_button :sex, true %>
-    <%= f.label :sex, 'オス', value: true, class: 'boolean' %>
-    <%= f.radio_button :sex, false %>
-    <%= f.label :sex, 'メス', value: false, class: 'boolean' %>
+    <%= f.select :sex, Pet.sexes.keys, selected: @pet.sex %>
   </div>
 
   <div>
