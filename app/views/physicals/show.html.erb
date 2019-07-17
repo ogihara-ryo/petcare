@@ -1,0 +1,26 @@
+<h1><%= @pet.name %></h1>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @physical.height %>cm
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @physical.weight %>kg
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= simple_format(@physical.note) %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @physical.date %>
+</p>
+
+<%= link_to 'Edit', edit_pet_physical_path(@pet, @physical) %> |
+<%= link_to 'Back', pet_physicals_path %>
