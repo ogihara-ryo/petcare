@@ -1,0 +1,16 @@
+<h1><%= @pet.name %></h1>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Note:</strong>
+  <%= simple_format(@excrete.note) %>
+</p>
+
+<p>
+  <strong>Datetime:</strong>
+  <%= @excrete.datetime %>
+</p>
+
+<%= link_to 'Edit', edit_pet_excrete_path(@pet, @excrete) %> |
+<%= link_to 'Back', pet_excretes_path %>
