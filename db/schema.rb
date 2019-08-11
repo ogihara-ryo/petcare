@@ -13,8 +13,12 @@
 ActiveRecord::Schema.define(version: 2019_07_24_022257) do
 
   create_table "excretes", force: :cascade do |t|
+    t.integer "pet_id"
+    t.text "note"
+    t.datetime "datetime"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["pet_id"], name: "index_excretes_on_pet_id"
   end
 
   create_table "pets", force: :cascade do |t|
