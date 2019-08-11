@@ -17,7 +17,7 @@
       <tr>
         <td><%= simple_format(excrete.note) %></td>
         <td><%= excrete.datetime %></td>
-        <td><%= link_to 'show', pet_excrete_path(@pet, excrete) %></td>
+        <td><%= link_to 'Show', pet_excrete_path(@pet, excrete) %></td>
         <td><%= link_to 'Edit', edit_pet_excrete_path(@pet, excrete) %></td>
         <td><%= link_to 'Destroy', pet_excrete_path(@pet, excrete), method: :delete, datetime: { confirm: 'Are you sure?' } %></td>
 
