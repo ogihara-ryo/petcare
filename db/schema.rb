@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2019_07_20_052142) do
     t.integer "user_id"
     t.string "name"
     t.string "race"
+    t.integer "sex", default: 0, null: false
     t.date "birthday"
     t.date "greeted_on"
     t.text "note"

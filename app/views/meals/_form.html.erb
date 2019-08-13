@@ -1,0 +1,39 @@
+<%= form_with model: [@pet, @meal], local: true  do |f| %>
+  <% if meal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(meal.errors.count, "error") %> prohibited this meal from being saved:</h2>
+
+      <ul>
+      <% meal.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :pet_id, value: @pet.id %>
+
+  <div>
+    <%= f.label :food %>
+    <%= f.text_area :note %>
+  </div>
+
+  <div>
+    <%= f.label :quantity %>
+    <%= f.number_field :weight, step: 1, min: 0 %>g
+  </div>
+
+  <div>
+    <%= f.label :note %>
+    <%= f.text_area :note %>
+  </div>
+
+  <div>
+    <%= f.label :datetime %>
+    <%= f.text_field :date, value: Time.zone.now.strftime("%Y/%m/%d") %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

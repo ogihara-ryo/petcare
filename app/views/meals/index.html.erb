@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Meals</h1>
+<h2><%= @pet.name %></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Food</th>
+      <th>Quantity</th>
+      <th>Note</th>
+      <th>Datetime</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @meals.each do |meal| %>
+      <tr>
+        <td><%= meal.food %></td>
+        <td><%= meal.quantity %></td>
+        <td><%= simple_format(meal.note) %></td>
+        <td><%= meal.datetime %></td>
+        <td><%= link_to 'Show', pet_meal_path(@pet, meal) %></td>
+        <td><%= link_to 'Edit', edit_pet_meal_path(@pet, meal) %></td>
+        <td><%= link_to 'Destroy', pet_meal_path(@pet, meal), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Meal', new_pet_meal_path %>
+<%= link_to 'Pets', pets_path %>
