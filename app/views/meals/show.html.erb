@@ -1,0 +1,26 @@
+<h1><%= @pet.name %></h1>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Food:</strong>
+  <%= @meal.food %>cm
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @meal.quantity %>kg
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= simple_format(@meal.note) %>
+</p>
+
+<p>
+  <strong>Datetime:</strong>
+  <%= @meal.datetime %>
+</p>
+
+<%= link_to 'Edit', edit_pet_meal_path(@pet, @meal) %> |
+<%= link_to 'Back', pet_meals_path %>
