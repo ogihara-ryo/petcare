@@ -20,7 +20,7 @@
 
   <div>
     <%= f.label :datetime %>
-    <%= f.text_field :datetime, value: Time.zon.nowstrftime("%Y%m%d%x") %>
+    <%= f.text_field :datetime, value: Time.zone.now.strftime("%Y/%m/%d %X") %>
   </div>
 
   <div class="actions">
