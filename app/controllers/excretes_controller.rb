@@ -3,7 +3,7 @@ class ExcretesController < ApplicationController
   before_action :set_excrete, only: %i[show edit update destroy]
 
   def index
-    @excretes = Excrete.where(pet: @pet).oder(date :desc)
+    @excretes = Excrete.where(pet: @pet).order(date: :desc)
   end
 
   def show; end
@@ -19,11 +19,11 @@ class ExcretesController < ApplicationController
 
     respond_to do |format|
       if @excrete.save
-        format.html { redirect_to pet_excrete_path, notice: 'Excrete was successfully created.' }
+        format.html { redirect_to pet_excretes_path, notice: 'Excrete was successfully created.' }
         format.json { render :show, status: :created, location: @excrete }
       else
         format.html { render :new }
-        format.json { render json: @excrete.errors, status :unprocessable_entity }
+        format.json { render json: @excrete.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -35,7 +35,7 @@ class ExcretesController < ApplicationController
         format.json { render :show, status: :ok, location: @excrete }
       else
         format.html { render :edit }
-        format.json { render json: @excrete.errors, status :unprocessable_entity }
+        format.json { render json: @excrete.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -59,6 +59,6 @@ class ExcretesController < ApplicationController
   end
 
   def excrete_params
-    params.require(:excrete).permit(:pet_id, :note, :date)
+    params.require(:excrete).permit(:pet_id, :note, :datetime)
   end
 end
