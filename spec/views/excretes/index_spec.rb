@@ -11,9 +11,9 @@ RSpec.feature 'pets/1/excretes/index', type: :system do
   end
 
   scenario 'it desplay order by created_at desc in default' do
-    expect(records[0].text).to have_text '2019/08/18 10:18:45'
-    expect(records[1].text).to have_text '2019/08/10 10:18:45'
-    expect(records[2].text).to have_text '2019/08/08 10:18:45'
+    expect(records[0].text).to have_text '2019-08-18 10:18:45'
+    expect(records[1].text).to have_text '2019-08-10 10:18:45'
+    expect(records[2].text).to have_text '2019-08-08 10:18:45'
   end
 
   scenario 'it is able to destroy' do
