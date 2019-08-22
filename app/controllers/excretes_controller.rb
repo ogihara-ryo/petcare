@@ -43,8 +43,8 @@ class ExcretesController < ApplicationController
   def destroy
     @excrete.destroy
     respond_to do |format|
-      format.html { redirect_to pet_excrete_path, notice: 'Excrete was successfully destroyed' }
-      format.json { head :no_content}
+      format.html { redirect_to pet_excretes_path, notice: 'Excrete was successfully destroyed' }
+      format.json { head :no_content }
     end
   end
 
