@@ -1,4 +1,4 @@
-reqire 'rails_helper'
+require 'rails_helper'
 
 RSpec.feature 'pets/1/excretes/new', type: :system do
   given!(:pet) { FactoryBot.create(:pet, user: FactoryBot.create(:user), name: 'アルク') }
@@ -20,7 +20,7 @@ RSpec.feature 'pets/1/excretes/new', type: :system do
       expect(page).to have_text 'Excrete was successfully created.'
       expect(page).to have_text 'アルク'
       expect(page).to have_text '順調に成長中!'
-      expect(page).to have_text '2019/08/18 10:18:45'
+      expect(page).to have_text '2019-08-18 10:18:45'
     end
   end
 end
