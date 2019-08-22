@@ -1,0 +1,29 @@
+<%= form_with model: [@pet, @excrete], local: true do |f| %>
+  <% if excrete.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(excrete.errors.count, "error") %> prohibited this excrete from being saved:</h2>
+
+      <ul>
+      <% excrete.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :pet_id, value: @pet.id %>
+
+  <div>
+    <%= f.label :note %>
+    <%= f.text_area :note %>
+  </div>
+
+  <div>
+    <%= f.label :datetime %>
+    <%= f.text_field :datetime, value: Time.zone.now.strftime("%Y/%m/%d %X") %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
