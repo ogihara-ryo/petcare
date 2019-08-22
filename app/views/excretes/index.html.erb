@@ -19,7 +19,7 @@
         <td><%= excrete.datetime %></td>
         <td><%= link_to 'Show', pet_excrete_path(@pet, excrete) %></td>
         <td><%= link_to 'Edit', edit_pet_excrete_path(@pet, excrete) %></td>
-        <td><%= link_to 'Destroy', pet_excrete_path(@pet, excrete), method: :delete, datetime: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', pet_excrete_path(@pet, excrete), method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
       </tr>
     <% end %>
@@ -28,5 +28,5 @@
 
 <br>
 
-<%= link_to 'New Excrete', new_pet_excrete_path %>
+<%= link_to 'New Excrete', new_pet_excrete_path(@pet) %>
 <%= link_to 'Pets', pets_path %>
