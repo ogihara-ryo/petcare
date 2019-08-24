@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :pets do
     resources :physicals
     resources :excretes
+    resources :notes
   end
 end
