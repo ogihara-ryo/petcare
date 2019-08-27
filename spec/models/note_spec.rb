@@ -1,5 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe Note, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe '.belong_to' do
+    let(:note) { FactoryBot.create(:note, pet: pet) }
+
+    describe 'pet' do
+      let(:pet) { FactoryBot.create(:pet, user: FactoryBot.create(:user), 'spica') }
+      before { note.pet = pet }
+      it { expect(note.pet).to eq pet }
+    end
+  end
 end
