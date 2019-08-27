@@ -31,7 +31,7 @@ class NotesController < ApplicationController
   def update
     respond_to do |format|
       if @note.update(note_params)
-        format.html { redirect_to pet_notes_path, notice: 'Physical was successfully updated.' }
+        format.html { redirect_to pet_notes_path, notice: 'Note was successfully updated.' }
         format.json { render :show, status: :ok, location: @note }
       else
         format.html { render :edit }
@@ -44,7 +44,7 @@ class NotesController < ApplicationController
     @note.destroy
     respond_to do |format|
       format.html { redirect_to pet_notes_path, notice: 'Note was successfully destroyed.' }
-      format.json { head :mp_content }
+      format.json { head :no_content }
     end
   end
 

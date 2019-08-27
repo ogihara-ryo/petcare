@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'pets/1/excretes/edit/1', typpe: :system do
+RSpec.feature 'pets/1/excretes/edit/1', tyype: :system do
   given!(:pet) { FactoryBot.create(:pet, user: FactoryBot.create(:user), name: 'アルク') }
   given!(:excrete1) { FactoryBot.create(:excrete, pet: pet) }
 

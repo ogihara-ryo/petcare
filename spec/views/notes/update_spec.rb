@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-Rspec.feature 'pets/1/notes/edit/1', type: :system do
+RSpec.feature 'pets/1/notes/edit/1', type: :system do
   given!(:pet) { FactoryBot.create(:pet, user: FactoryBot.create(:user), name: 'アルク') }
-  given!(:note1) { FactoryBot.create(:note, pet: :pet) }
+  given!(:note1) { FactoryBot.create(:note, pet: pet) }
 
   background do
     visit pet_notes_path(pet.id)
@@ -17,9 +17,9 @@ Rspec.feature 'pets/1/notes/edit/1', type: :system do
     end
 
     scenario 'it is updated' do
-      expect(current_path). to eq pet_note_path(pet, note1)
+      expect(current_path). to eq pet_notes_path(pet)
       expect(page).to have_text 'Note was successfully updated.'
-      expext(page).to have_text 'アルク'
+      expect(page).to have_text 'アルク'
       expect(page).to have_text '順調に成長中!'
       expect(page).to have_text '2019-08-18 10:18:45'
     end

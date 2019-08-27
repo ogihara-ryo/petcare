@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-Rspec.feature 'pets/1/notes/index', type: :system do
+RSpec.feature 'pets/1/notes/index', type: :system do
   given!(:pet) { FactoryBot.create(:pet, user: FactoryBot.create(:user), name: 'アルク') }
   given!(:note1) { FactoryBot.create(:note, pet: pet, datetime: '2019/08/18 10:18:45') }
   given!(:note2) { FactoryBot.create(:note, pet: pet, datetime: '2019/08/10 10:18:45') }
@@ -8,6 +8,12 @@ Rspec.feature 'pets/1/notes/index', type: :system do
 
   background do
     visit pet_notes_path(pet)
+  end
+
+  scenario 'it desplay order by created_at desc in default' do
+    expect(records[0].text).to have_text '2019-08-18 10:18:45'
+    expect(records[1].text).to have_text '2019-08-10 10:18:45'
+    expect(records[2].text).to have_text '2019-08-08 10:18:45'
   end
 
   scenario 'it is able to destroy' do

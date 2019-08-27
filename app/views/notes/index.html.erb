@@ -19,7 +19,7 @@
         <td><%= note.datetime %></td>
         <td><%= link_to 'Show', pet_note_path(@pet, note) %></td>
         <td><%= link_to 'Edit', edit_pet_note_path(@pet, note) %></td>
-        <td><%= link_to 'Destroy', pet_note_path(@pet, note), method: :delete, date: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', pet_note_path(@pet, note), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

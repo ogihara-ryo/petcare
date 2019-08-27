@@ -5,7 +5,7 @@ RSpec.describe Note, type: :model do
     let(:note) { FactoryBot.create(:note, pet: pet) }
 
     describe 'pet' do
-      let(:pet) { FactoryBot.create(:pet, user: FactoryBot.create(:user), 'spica') }
+      let(:pet) { FactoryBot.create(:pet, user: FactoryBot.create(:user), name: 'spica') }
       before { note.pet = pet }
       it { expect(note.pet).to eq pet }
     end
